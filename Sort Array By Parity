@@ -1,0 +1,30 @@
+class Solution(object):
+    def sortArrayByParity(self, A):
+        """
+        :type A: List[int]
+        :rtype: List[int]
+        """
+        #using while loop
+        
+        #approach : Write pointer points to zero. Iterate the array if u find an even integer 
+        #then swap that element with the element that write pointer points to. 
+        
+        i=0
+        w=0                       
+        while i<len(A):
+            if A[i]%2==0:
+                A[w],A[i]=A[i],A[w]
+                w+=1
+                #print(A)
+            i+=1
+        return A
+        '''
+        #using for loo[]
+        p = 0
+        for i in range(len(A)):
+            if A[i] %2== 0:
+                A[p], A[i] = A[i], A[p]
+                #print(A)
+                p += 1
+        return A
+        '''
