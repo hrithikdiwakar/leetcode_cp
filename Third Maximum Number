@@ -1,0 +1,21 @@
+class Solution(object):
+    def thirdMax(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n=set(nums)
+        #l=len(n)
+        #print("l=",l)
+        #print(nums)
+        if len(n)<3:
+            return max(n)
+        i=0
+        m=0
+        while i <3 and len(n):
+            m=max(n)
+            #print(m)
+            i+=1
+            n.remove(m)
+        #print("f m=",m)
+        return m

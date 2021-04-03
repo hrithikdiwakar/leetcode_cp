@@ -1,0 +1,28 @@
+class Solution(object):
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        i=0
+        x=len(nums)
+        while(i<x):
+            if(nums[i]==val):
+                nums[i]=nums[x-1]
+                print(nums)
+                x=x-1
+            else:
+                i=i+1
+        
+        return x
+        '''
+        i=0
+        while(i<len(nums)):
+            if nums[i]==val:
+                nums.pop(i)
+                #print(nums)
+            else:
+                i=i+1
+        return len(nums)
+        '''
