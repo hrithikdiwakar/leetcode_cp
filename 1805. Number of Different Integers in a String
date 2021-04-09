@@ -1,0 +1,18 @@
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
+        
+        x=""
+        for i in range(len(word)):
+            if word[i].isalpha():
+                x+=" "
+                
+            elif word[i].isdigit():
+                x+=word[i]
+        y=x.split(" ")
+        l=[]
+        for i in y:
+            if i.isdigit():
+                l.append(int(i))
+                        
+        s=set(l)
+        return (len(s))
