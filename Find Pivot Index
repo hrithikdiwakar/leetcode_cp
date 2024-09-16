@@ -1,0 +1,28 @@
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        """
+        not optimal takes a runtime of 8403ms
+        
+        i=0
+        lsum=0
+        rsum=0
+        while i < len(nums):
+            #lsum=sum(nums[:i])
+            #rsum=sum(nums[i+1:])
+            if sum(nums[:i])==sum(nums[i+1:]):
+                return i
+            i=i+1
+        else:
+            return -1
+        """
+        total = sum(nums)
+        
+        left, right = 0, total - nums[0]
+        for i in range(len(nums) - 1): 
+            if left == right: return i
+            left += nums[i]
+            right -= nums[i+1]
+            #print(i, left, right)
+            
+        if left == right: return len(nums) - 1
+        return -1
